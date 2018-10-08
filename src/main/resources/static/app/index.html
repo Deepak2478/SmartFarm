@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crop Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./app.css">
+    <script type="text/javascript" src="./app.js"></script>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#" style="padding: 0px;"><img src="https://i.pinimg.com/236x/c8/b3/e1/c8b3e10cc5da6a9abacb6d52b75890f6--tree-logos-finger-print.jpg" alt="logo" /></a> <a href="javascript:updateProgress(this)" class="active">Update Progress</a> <a href="javascript:reportDisease(this);">Report Disease</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div id="updateProgress" class="contentDiv">
+
+        <form action="/api/person/saveProgress" method="POST">
+
+            <Label>Farmer Id:
+                 <select id="farmerIdSelector1" name="farmerId" placeholder="Farmer Id" >
+                	<option value="" selected>Select an Option</option>
+                </select>
+            </label>
+            </br>
+           <!--  <Label>Secret Code:
+                <input type="text" placeholder="Secret Code" />
+            </label> -->
+            </br>
+            <hr />
+            <Label>Sowing :
+                <input type="text" name="sowing" placeholder="Sowing" />
+            </label>
+            </br>
+            <Label>Irrigation:
+                <input type="text" name="irrigation" placeholder="Irrigation" />
+            </label>
+            </br>
+            <Label>Harvesting:
+                <input type="text" name="harvesting" placeholder="Harvesting" />
+            </label>
+            </br>
+            <input type="submit" />
+
+        </form>
+    </div>
+
+    <div id="reportDisease" style="display: none;" class="contentDiv">
+        <form method="post" action="/api/file/upload1" enctype="multipart/form-data">
+            <input type="hidden" name="fileType" value="disease" />
+            <Label>Farmer Id:
+                <!-- <input type="text" name="farmerId" placeholder="Farmer Id" /> -->
+                <select id="farmerIdSelector2" name="farmerId" placeholder="Farmer Id" >
+                	<option value="" selected>Select an Option</option>
+                </select>
+            </label>
+            </br>
+            <!-- <Label>Secret Code:
+                <input type="text" placeholder="Secret Code" />
+            </label> -->
+            </br>
+            <hr />
+            <Label>Description:
+                <input type="text" name="description" placeholder="descprition" />
+            </Label>
+            </br>
+            <Label>Select Image of Diseased crop
+                <input name="file" type="file" placeholder="Secret Code" />
+            </label>
+            </br>
+            <input type="submit" />
+
+        </form>
+    </div>
+    <div>
+        <h1 id="location"></h1>
+    </div>
+</body>
+
+</html>

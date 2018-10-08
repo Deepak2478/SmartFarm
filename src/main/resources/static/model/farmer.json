@@ -1,0 +1,107 @@
+{
+	"farmerCount" : 0,
+	"enableDelete" : false,
+	"farmers":[  
+   	  {  
+         "name":"Mohan Kumar",
+         "cropVariety":"Potato",
+         "location" : "Ludhiana, Punjab",
+         "range":"1st April, 2018 to 30th June, 2018",
+         "displayColor": "Error",
+         "plotSize" : "300 Acres",
+         "phone": "+91 8123717308",
+         "displayValue" : 40,
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 50
+         },
+         {
+         	"color": "Critical",
+         	"value" : 150
+         },
+         {
+         	"color": "Good",
+         	"value" : 200
+         }
+         ],
+         "performance":[{
+         	"color": "Error",
+         	"value" : 30
+         }],
+         "performanceScale": "Sowing",
+         "expectedQuantity":"1000 tonnes"
+      },
+      {  
+         "name":"Ramdas Hans",
+         "cropVariety":"Sugarcane",
+         "location" : "Moga, Punjab",
+         "range":"1st May, 2018 to 31st August, 2018",
+         "displayColor": "Good",
+         "plotSize" : "600 Acres",
+         "phone": "+91 8091150021",
+        "displayValue" : 170,
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 100
+         },
+         {
+         	"color": "Critical",
+         	"value" : 150
+         },
+         {
+         	"color": "Good",
+         	"value" : 250
+         }],
+        "performance":[{
+        	"color": "Good",
+         	"value" : 80,
+         	"scale": "Harvesting"
+        }],
+        "performanceScale": "Harvesting",
+         "expectedQuantity":"1200 tonnes"
+      },
+      {  
+         "name":"Abhishek Suri",
+         "cropVariety":"Coconut",
+         "location" : "Hoshiarpur, Punjab",
+         "range":"1st Sep, 2018 to 31st December, 2018",
+         "displayColor": "Critical",
+        "displayValue" : 110,
+         "plotSize" : "200 Acres",
+         "phone": "+91 9218835149",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 100
+         },
+         {
+         	"color": "Critical",
+         	"value" : 150
+         },
+         {
+         	"color": "Good",
+         	"value" : 250
+         }
+         ],
+         "performance":[{
+        	"color": "Critical",
+         	"value" : 60,
+         	"scale": "Irrigation"
+        }],
+        "performanceScale": "Irrigation",
+         "expectedQuantity":"1500 tonnes"
+      }
+      
+   ]
+}

@@ -1,0 +1,61 @@
+{
+	"EntryCollection": [
+		{
+			"Author": "Abhishek Suri",
+			"AuthorPicUrl": "images/maize.jpg",
+			"Type": "Request",
+			"Date": "Aug 25 2018",
+			"Actions": [
+				{
+					"Text": "Find",
+					"Icon": "sap-icon://search",
+					"Key": "find"
+				},
+				{
+					"Text": "Share",
+					"Icon": "sap-icon://share-2",
+					"Key": "share"
+				}
+			],
+			"Text": "What are the fertilizers needed after 15 days of irrigation for Maize crop?"
+		},
+		{
+			"Author": "Mohan Kumar",
+			"AuthorPicUrl": "images/maize_disease.jpg",
+			"Type": "Request",
+			"Date": "Aug 26 2018",
+			"Text": "Please check the disease",
+			"Actions": [
+				{
+					"Text": "Find",
+					"Icon": "sap-icon://search",
+					"Key": "find"
+				},
+				{
+					"Text": "Share",
+					"Icon": "sap-icon://share-2",
+					"Key": "share"
+				}
+			]
+		},
+		{
+			"Author": "Ramdas Hans",
+			"AuthorPicUrl": "images/potato_disease.jpg",
+			"Type": "Request",
+			"Date": "Aug 29 2018",
+			"Text": "Please check the disease",
+			"Actions": [
+				{
+					"Text": "Find",
+					"Icon": "sap-icon://search",
+					"Key": "find"
+				},
+				{
+					"Text": "Share",
+					"Icon": "sap-icon://share-2",
+					"Key": "share"
+				}
+			]
+		}
+	]
+}

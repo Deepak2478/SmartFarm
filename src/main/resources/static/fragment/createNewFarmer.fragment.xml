@@ -1,0 +1,168 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:suite="sap.ui.commons"
+	xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap"
+	xmlns:mc="sap.suite.ui.microchart" xmlns:t="sap.ui.table">
+	<uxap:ObjectPageLayout upperCaseAnchorBar="false" enableLazyLoading="true">
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader objectTitle="{createModel>/targetHeaderName}">
+				<uxap:actions>
+					<uxap:ObjectPageHeaderActionButton icon="sap-icon://full-screen" tooltip="Full Screen" type="Transparent"
+						press="handleFullScreenButton"/>
+					<uxap:ObjectPageHeaderActionButton icon="sap-icon://decline" tooltip="Close" type="Transparent"
+						press="handleCloseFlexibleColumnLayout"/>
+				</uxap:actions>
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+		<uxap:sections>
+			<uxap:ObjectPageSection title="Farmer Details" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+								singleContainerFullSize="false">
+								<f:content>
+									<Label text="Farmer Name"/>
+									<Input required="true" id="nameId" value="{createModel>/name}" liveChange="enterFarmerName"/>
+									<!-- <Label text="Address"/>
+									<Input required="true" value="{createModel>/address}"/> -->
+									<Label text="Address" />
+									<Input value="{createModel>/addressLine1}"/>
+									<Input value="{createModel>/addressLine2}">
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S4" />
+										</layoutData>
+									</Input>
+									<Label text="City/State" />
+									<Input value="{createModel>/city}">
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S4" />
+										</layoutData>
+									</Input>
+									<Input value="{createModel>/state}" />
+									<Label text="Country" />
+										<Select selectedKey="{createModel>/country}">
+											<items>
+												<core:Item text="United Kingdom" key="UK"/>
+												<core:Item text="Germany" key="DE"/>
+												<core:Item text="USA" key="US"/>
+												<core:Item text="India" key="IN"/>
+											</items>
+										</Select>
+									<Label text="Contact No."/>
+									<Input required="true" value="{createModel>/contactNo}"/>
+									<Label text="Email Address"/>
+									<Input required="true" value="{createModel>/email}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Plot Details" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+								singleContainerFullSize="false">
+								<f:content>
+									<!-- <Label text="Plot" />
+									<Input value="{createModel>/plotAddressLine1}"/>
+									<Input value="{createModel>/plotAddressLine2}">
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S4" />
+										</layoutData>
+									</Input>
+									<Label text="City/State" />
+									<Input value="{createModel>/plotCity}">
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S4" />
+										</layoutData>
+									</Input>
+									<Input value="{createModel>/plotState}" />
+									<Label text="Country" />
+										<Select selectedKey="{createModel>/country}">
+											<items>
+												<core:Item text="United Kingdom" key="UK"/>
+												<core:Item text="Germany" key="DE"/>
+												<core:Item text="USA" key="US"/>
+												<core:Item text="India" key="IN"/>
+											</items>
+										</Select> -->
+									<Label text="Plot Size"/>
+									<Input value="{createModel>/plotSize}"/>
+									<Label text="Expected Quantity"/>
+									<Input value="{createModel>/expectedQuantity}"/>
+									<Label text="Latitude"/>
+									<Input value="{createModel>/latitude}"/>
+									<Label text="Longitude"/>
+									<Input value="{createModel>/longitude}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Crop Details" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+								singleContainerFullSize="false">
+								<f:content>
+									<Label text="Crop Variety"/>
+									<Select items="{createModel>/crops}" selectedKey="{createModel>/cropId}" change="onEnteringCropName">
+											<items>
+												<core:Item text="{createModel>name}" key="{createModel>id}"/>
+											</items>
+									</Select>
+									<!-- <Input required="true" value="{createModel>/cropVariety}" liveChange="onEnteringCropName"/> -->
+									<Label text="Crop Period"/>
+									<DateRangeSelection
+										dateValue="{path:'createModel>/DR1'}"
+										secondDateValue="{path:'createModel>/DR2'}"
+										change="handleChange"/>
+									
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<!-- <uxap:ObjectPageSection title="Crop Cycle" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<t:Table visibleRowCount="3" selectionMode="None" enableColumnReordering="false" rows="{createModel>/thresholds}">
+								<t:columns>
+									<t:Column>
+										<Label text="Phase"/>
+										<t:template class="sapUiSizeCompact">
+											<HBox class="sapUiTinyMarginEnd">
+												<Image src = "{createModel>src}" width="2rem" height="2rem"/>
+												<ObjectStatus class="sapUiSmallMarginBottom" text="{createModel>name}" active="false" state="Success"/>
+											</HBox>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="From"/>
+										<t:template class="sapUiSizeCompact">
+											<Input value="{createModel>fromDate}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="To"/>
+										<t:template class="sapUiSizeCompact">
+											<Input value="{createModel>toDate}"/>
+										</t:template>
+									</t:Column>
+								</t:columns>
+							</t:Table>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>-->
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</core:FragmentDefinition>

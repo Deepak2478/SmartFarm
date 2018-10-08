@@ -1,0 +1,152 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:suite="sap.ui.commons" xmlns:fa="sap.f"
+	xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:t="sap.ui.table">
+	<uxap:ObjectPageLayout upperCaseAnchorBar="false" enableLazyLoading="true">
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:expandedHeading>
+					<Title text="{displayCropData>/name}" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+						<FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+							<fa:Avatar src="{displayCropData>/icon}" displaySize="S" displayShape="Square" class="sapUiTinyMarginEnd"/>
+							<Title text="{products>Name}" wrapping="true"/>
+						</FlexBox>
+					</FlexBox>
+				</uxap:snappedHeading>
+				<uxap:navigationActions>
+					<OverflowToolbarButton icon="sap-icon://full-screen" tooltip="{i18n>FULL_SCREEN}" type="Transparent" press="handleFullScreenButton"/>
+					<OverflowToolbarButton icon="sap-icon://decline" tooltip="{i18n>CLOSE}" type="Transparent" press="handleCloseFlexibleColumnLayout"/>
+				</uxap:navigationActions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<fa:Avatar src="{displayCropData>/icon}" displaySize="L" displayShape="Square" class="sapUiTinyMarginEnd"></fa:Avatar>
+				<VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<Label text="Crop Type"/>
+					<Text text="{displayCropData>/type}"/>
+				</VBox>
+				<VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<Label text="Season"/>
+					<Text text="{displayCropData>/season}"/>
+				</VBox>
+			</FlexBox>
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection title="Soil Preparation" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Soil Type" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/soilType}" class="sapUiSmallMarginBottom"/>
+									<Label text="PH Range" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/soilPhRange}" class="sapUiSmallMarginBottom"/>
+									<Label text="Soil Temperature" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/soilTemp}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Planting Details" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Seed Rate" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/seedRate}" class="sapUiSmallMarginBottom"/>
+									<Label text="Sowing Depth" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/sowingDepth}" class="sapUiSmallMarginBottom"/>
+									<Label text="Row Spacing" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/sowing}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Irrigation/Fertilization Details" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Irrigation" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/irrigation}" class="sapUiSmallMarginBottom"/>
+									<Label text="Farm Yield Manure" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/fertilizers}" class="sapUiSmallMarginBottom"/>
+									<Label text="Nitrogen" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/nitrogen}" class="sapUiSmallMarginBottom"/>
+									<Label text="Phosphorous" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/phosphorous}" class="sapUiSmallMarginBottom"/>
+									<Label text="Potassium" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/potassium}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Harvesting" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Average Yield" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/averageYield}" class="sapUiSmallMarginBottom"/>
+									<Label text="Storage Temperature" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/storageTemp}" class="sapUiSmallMarginBottom"/>
+									<Label text="Relative Humidity" class="sapUiSmallMarginBottom"/>
+									<Text text="{displayCropData>/relativeHumidity}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Crop Cycle" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<t:Table visibleRowCount="3" selectionMode="None" enableColumnReordering="false" rows="{displayCropData>/thresholds}">
+								<t:columns>
+									<t:Column>
+										<Label text="Phase"/>
+										<t:template class="sapUiSizeCompact">
+											<HBox class="sapUiTinyMarginEnd">
+												<Image src = "{displayCropData>src}" width="2rem" height="2rem"/>
+												<ObjectStatus class="sapUiSmallMarginBottom" text="{displayCropData>name}" active="false" state="Success"/>
+											</HBox>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="From"/>
+										<t:template class="sapUiSizeCompact">
+											<Text text="{displayCropData>fromDate}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="To"/>
+										<t:template class="sapUiSizeCompact">
+											<Text text="{displayCropData>toDate}"/>
+										</t:template>
+									</t:Column>
+								</t:columns>
+							</t:Table>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</core:FragmentDefinition>

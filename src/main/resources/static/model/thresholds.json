@@ -1,0 +1,221 @@
+{
+	"thresholds":[  
+   	  {  
+         "name":"Mohan Kumar",
+         "displayColor": "Error",
+         "displayValue" : 30,
+         "phase": "Sowing",
+		 "src": "images/sowing.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      },
+      {
+      	"name":"Mohan Kumar",
+        "displayColor": "Neutral",
+        "displayValue" : 0,
+        "phase": "Irrigation/Growth",
+		 "src": "images/irrigation.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      },
+      { 
+      	"name":"Mohan Kumar",
+        "displayColor": "Neutral",
+        "displayValue" : 0,
+		"phase": "Harvest",
+		"src": "images/harvest.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      },
+      {  
+         "name":"Ramdas Hans",
+         "displayColor": "Good",
+         "displayValue" : 100,
+         "phase": "Sowing",
+		 "src": "images/sowing.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      },
+      {
+      	"name":"Ramdas Hans",
+        "displayColor": "Good",
+        "displayValue" : 100,
+        "phase": "Irrigation/Growth",
+		 "src": "images/irrigation.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      },
+      { 
+      	"name":"Ramdas Hans",
+        "displayColor": "Good",
+        "displayValue" : 80,
+		"phase": "Harvest",
+		"src": "images/harvest.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      },
+      {  
+         "name":"Abhishek Suri",
+         "displayColor": "Good",
+         "displayValue" : 100,
+         "phase": "Sowing",
+		 "src": "images/sowing.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      },
+      {
+      	"name":"Abhishek Suri",
+        "displayColor": "Critical",
+        "displayValue" : 60,
+        "phase": "Irrigation/Growth",
+		 "src": "images/irrigation.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      },
+      { 
+      	"name":"Abhishek Suri",
+        "displayColor": "Neutral",
+        "displayValue" : 0,
+		"phase": "Harvest",
+		"src": "images/harvest.jpg",
+         "bars":[{
+         	"color": "Error",
+         	"value" : 0
+         },
+         {
+         	"color": "Critical",
+         	"value" : 40
+         },
+         {
+         	"color": "Critical",
+         	"value" : 70
+         },
+         {
+         	"color": "Good",
+         	"value" : 100
+         }
+         ]
+      }
+      
+   ]
+}

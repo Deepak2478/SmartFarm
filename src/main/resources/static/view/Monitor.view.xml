@@ -1,0 +1,69 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:mc="sap.suite.ui.microchart" xmlns="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar" controllerName="sap.innventInnvent.controller.Monitor" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<ObjectHeader id="oh1" responsive="true" numberState="Success" backgroundDesign="Translucent">
+			<headerContainer>
+				<HeaderContainer scrollStep="200" content="{monitorDetails>/details}">
+					<content>
+						<TileContent class="customHighlightOnHover">
+							<content>
+								<VBox>
+									<Title text="{monitorDetails>name}"/>
+									<HBox class="sapUiSmallMarginTop">
+										<mc:DeltaMicroChart size="S" press="onPress" value1="{monitorDetails>land/expectedQuantity}" value2="{monitorDetails>land/actualQuantity}"
+											title1="Expected Quantity" title2="Current Quantity" displayValue1="{monitorDetails>land/expectedQuantity}"
+											displayValue2="{monitorDetails>land/actualQuantity}" deltaDisplayValue="{monitorDetails>land/diff}" color="{monitorDetails>land/color}"
+											class="deltaChart"/>
+										<NumericContent press="onPress" class="tileData" size="S" scale="T" value="{monitorDetails>land/actualQuantity}"
+											valueColor="{monitorDetails>land/color}" indicator="{monitorDetails>land/indicator}"/>
+									</HBox>
+								</VBox>
+							</content>
+						</TileContent>
+					</content>
+				</HeaderContainer>
+			</headerContainer>
+		</ObjectHeader>
+		<l:DynamicSideContent id="DynamicSideContent" class="contentHeight sapUiDSCExplored sapUiContentPadding" containerQuery="true"
+			equalSplit="true">
+			<l:mainContent>
+				<VBox fitContainer="true" justifyContent="Center" alignItems="Center" class="mapVBox">
+					<!-- <html:iframe src="https://www.google.com" width="100%" height="100%"/> -->
+					<HBox id="map_canvas" fitContainer="true" alignItems="Center"></HBox>
+				</VBox>
+			</l:mainContent>
+			<l:sideContent>
+				<VBox>
+					<Table inset="false" items="{moreDetails>/plots}" class="sapFDynamicPageAlignContent" width="auto">
+						<columns>
+							<Column>
+								<Text text="Plot Area"/>
+							</Column>
+							<Column>
+								<Text text="Crop"/>
+							</Column>
+							<Column hAlign="End">
+								<Text text="Performance"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier title="{moreDetails>area}"/>
+									<Text text="{moreDetails>crop}"/>
+									<Link text="Performance" emphasized="true" href="{moreDetails>link}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</VBox>
+			</l:sideContent>
+		</l:DynamicSideContent>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Raise Alert" type="Transparent" press="triggerAction"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

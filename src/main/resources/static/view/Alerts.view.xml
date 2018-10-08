@@ -1,0 +1,12 @@
+<mvc:View controllerName="sap.innventInnvent.controller.Alerts" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<l:VerticalLayout class="sapUiContentPadding" width="100%">
+		<l:content>
+			<List headerText="Manage Alerts" items="{alertDetails>/}">
+				<FeedListItem sender="{alertDetails>farmerName}" icon="{alertDetails>concatPath}" senderPress="onPress" iconPress="onPress" iconDensityAware="false" info="{alertDetails>Type}"
+					timestamp="{alertDetails>date}" text="{alertDetails>description}" convertLinksToAnchorTags="All" actions="{path: 'alertDetails>Actions', templateShareable: false}">
+					<FeedListItemAction text="{alertDetails>Text}" icon="{alertDetails>Icon}" key="{alertDetails>Key}" press="onActionPressed"/>
+				</FeedListItem>
+			</List>
+		</l:content>
+	</l:VerticalLayout>
+</mvc:View>

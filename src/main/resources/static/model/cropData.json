@@ -1,0 +1,51 @@
+{
+	"cropsDetails": [{
+		"name": "Carrots",
+		"soilPhRange": "6.0 to 7.0",
+		"soilType": "Loose, free of debris and clods, and either loamy or sandy",
+		"soilTemp": "15 to 20 degree Celsius",
+		"sowingDepth": "5 mm",
+		"seedRate": "4 kg/hectare",
+		"sowing": "Row spacing 25-30cm",
+		"irrigation": "Once in 5 days",
+		"fertilizers": "F.Y.M.  250-400 g/hectare",
+		"nitrogen": "120-160 kg/hectare N",
+		"phosphorous": "80-120 kg/hectare P",
+		"potassium": "80-120 kg/hectare K",
+		"averageYield": "20 to 30 tonnes/hectare",
+		"storageTemp": "0 to 3 degree Celsius",
+		"relativeHumidity": "98%"
+	}, {
+		"name": "Maize",
+		"soilPhRange": "7.5 to 8.5",
+		"soilType": "Friable, well drained warm loam and silty loam",
+		"soilTemp": "15.60 to 30 degree Celsius",
+		"seedRate": "20 kg/hectare",
+		"sowingDepth": "5-6 cm",
+		"sowing": "Row spacing 60-70cm",
+		"irrigation": "Once in 2 days",
+		"fertilizers": "F.Y.M.  12.5 tonnes/hectare",
+		"nitrogen": "150-180 kg/hectare N",
+		"phosphorous": "70-80 kg/hectare P",
+		"potassium": "70-80 kg/hectare K",
+		"averageYield": "27.8 quintals/hectare",
+		"storageTemp": "10 to 20 degree Celsius",
+		"relativeHumidity": "70%"
+	}, {
+		"name": "Peas",
+		"soilPhRange": "6.0 to 8.0",
+		"soilType": "Fertile, sandy loam that drains well",
+		"soilTemp": "10 to 30 degree Celsius",
+		"seedRate": "20 to 30 kg/hectare",
+		"sowingDepth": "1 inch",
+		"sowing": "Row spacing 25-40cm",
+		"irrigation": "Once in 2 days",
+		"fertilizers": "F.Y.M.  10-15 kg/hectare",
+		"nitrogen": "30-35 kg/hectare N",
+		"phosphorous": "40-45 kg/hectare P",
+		"potassium": "50-55 kg/hectare K",
+		"averageYield": "30 to 40 quintals/hectare",
+		"storageTemp": " 6 to 12 degree Celsius",
+		"relativeHumidity": "85%"
+	}]
+}

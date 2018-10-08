@@ -1,0 +1,79 @@
+.deltaChart .sapSuiteDMCValue1 {
+    text-align: center !important;
+}
+
+.deltaChart .sapSuiteDMCDelta {
+    text-align: center !important;
+}
+
+.deltaChart {
+    outline: none !important;
+}
+
+.deltaChart .sapSuiteDMCValue2 {
+    text-align: center !important;
+}
+
+.tileData {
+    width: 6rem !important;
+    outline: none !important;
+}
+
+.tileData .sapMNCValueScr {
+    font-size: 2rem !important;
+}
+
+.customHighlightOnHover:hover {
+    background-color: #4e7395;
+    outline: none !important;
+}
+
+.outlineClass {
+    outline: none !important;
+}
+
+.tilePressed {
+	outline: none !important;
+    border-radius: 5px;
+    border: 2px solid #91c8f6;
+    border-bottom: 4px solid #91c8f6 !important;
+    background-color: #4e7395;
+    box-shadow: 0 0.125rem 0.5rem 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15) !important;
+    cursor: pointer !important;
+}
+
+.tilePressed::after {
+    content: '';
+    position: absolute;
+    top: 101%;
+    left: calc(47%);
+    background: #91c8f6;
+    width: 20px;
+    height: 10px;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.myMap {
+    height: 100%;
+    width: 100%
+}
+
+.contentHeight {
+    height: 70% !important;
+}
+
+.contentHeight>div {
+    width: 70% !important;
+}
+
+.contentHeight>aside {
+    width: 30% !important;
+}
+
+.ohClass {
+    border-bottom: 4px solid #91c8f6 !important;
+}
+.mapVBox>div:first-child{
+	height: 100% !important;
+    width: 100% !important;
+}

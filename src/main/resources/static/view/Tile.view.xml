@@ -1,0 +1,27 @@
+<mvc:View controllerName="sap.innventInnvent.controller.Tile" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<Page title="PROCTOR" enableScrolling="false">
+		<HBox justifyContent="Center">
+		<GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop" header="Onboard Crops" press="navToCropPage">
+			<TileContent>
+				<ImageContent src="images/crop.png" />
+			</TileContent>
+		</GenericTile>
+		<GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop" header="Onboard Farmer" press="navToFarmerPage">
+			<TileContent>
+				<ImageContent src="images/farmer.png" />
+			</TileContent>
+		</GenericTile>
+		<GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop" header="Monitor Crops" press="navToCropMonitor">
+			<TileContent>
+				<ImageContent src="images/monitor.png" />
+			</TileContent>
+		</GenericTile>
+		<GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop" header="Manage Alerts" press="navToAlertsPage">
+			<TileContent>
+				<ImageContent src="images/alerts.jpg" />
+			</TileContent>
+		</GenericTile>
+		</HBox>
+	</Page>
+</mvc:View>

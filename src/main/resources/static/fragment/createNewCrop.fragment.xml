@@ -1,0 +1,157 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:suite="sap.ui.commons"
+	xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap"
+	xmlns:mc="sap.suite.ui.microchart" xmlns:t="sap.ui.table" xmlns:fa="sap.f" 	xmlns:u="sap.ui.unified">
+	<uxap:ObjectPageLayout upperCaseAnchorBar="false" enableLazyLoading="true">
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:expandedHeading>
+					<Title text="{createModelCrop>/cropHeaderName}" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</uxap:expandedHeading>
+				<uxap:navigationActions>
+					<u:FileUploader id="fileUploader" uploadOnChange="true" name="myFileUpload" iconOnly="true" buttonOnly="true" icon="sap-icon://upload" press="handleUploadPress" uploadComplete="handleUploadComplete"/>
+					<OverflowToolbarButton icon="sap-icon://full-screen" tooltip="Full Screen" type="Transparent" press="handleFullScreenButton"/>
+					<OverflowToolbarButton icon="sap-icon://decline" tooltip="Close" type="Transparent" press="handleCloseFlexibleColumnLayout"/>
+				</uxap:navigationActions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<fa:Avatar src="{createModelCrop>/icon}" displaySize="L" displayShape="Square" class="sapUiTinyMarginEnd"></fa:Avatar>
+			</FlexBox>
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection title="General" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Crop Name" class="sapUiSmallMarginBottom"/>
+									<Input liveChange="onAddNewCropName" required="true" value="{createModelCrop>/name}" class="sapUiSmallMarginBottom"/>
+									<Label text="Crop Type" class="sapUiSmallMarginBottom"/>
+									<Input value="{createModelCrop>/cropType}" class="sapUiSmallMarginBottom"/>
+									<Label text="Crop Season" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/cropSeason}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Soil Preparation" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Soil Type" class="sapUiSmallMarginBottom"/>
+									<Input value="{createModelCrop>/soilType}" class="sapUiSmallMarginBottom"/>
+									<Label text="PH Range" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/soilPhRange}" class="sapUiSmallMarginBottom"/>
+									<Label text="Soil Temperature" class="sapUiSmallMarginBottom"/>
+									<Input value="{createModelCrop>/soilTemp}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Planting Details" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Seed Rate" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/seedRate}" class="sapUiSmallMarginBottom"/>
+									<Label text="Sowing Depth" class="sapUiSmallMarginBottom"/>
+									<Input value="{createModelCrop>/sowingDepth}" class="sapUiSmallMarginBottom"/>
+									<Label text="Row Spacing" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/rowSpacing}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Irrigation/Fertilization Details" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Irrigation" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/irrigation}" class="sapUiSmallMarginBottom"/>
+									<Label text="Farm Yield Manure" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/fertilizers}" class="sapUiSmallMarginBottom"/>
+									<Label text="Nitrogen" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/nitrogen}" class="sapUiSmallMarginBottom"/>
+									<Label text="Phosphorous" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/phosphorous}" class="sapUiSmallMarginBottom"/>
+									<Label text="Potassium" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/potassium}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Harvesting" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+								<f:content>
+									<Label text="Average Yield" class="sapUiSmallMarginBottom"/>
+									<Input required="true" value="{createModelCrop>/averageYield}" class="sapUiSmallMarginBottom"/>
+									<Label text="Storage Temperature" class="sapUiSmallMarginBottom"/>
+									<Input value="{createModelCrop>/storageTemp}" class="sapUiSmallMarginBottom"/>
+									<Label text="Relative Humidity" class="sapUiSmallMarginBottom"/>
+									<Input value="{createModelCrop>/relativeHumidity}"/>
+								</f:content>
+							</f:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Crop Cycle" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+						<uxap:blocks>
+							<t:Table visibleRowCount="3" selectionMode="None" enableColumnReordering="false" rows="{createModelCrop>/thresholds}">
+								<t:columns>
+									<t:Column>
+										<Label text="Phase"/>
+										<t:template class="sapUiSizeCompact">
+											<HBox class="sapUiTinyMarginEnd">
+												<Image src = "{createModelCrop>src}" width="2rem" height="2rem"/>
+												<ObjectStatus class="sapUiSmallMarginBottom" text="{createModelCrop>name}" active="false" state="Success"/>
+											</HBox>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="From"/>
+										<t:template class="sapUiSizeCompact">
+											<Input value="{createModelCrop>fromDate}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="To"/>
+										<t:template class="sapUiSizeCompact">
+											<Input value="{createModelCrop>toDate}"/>
+										</t:template>
+									</t:Column>
+								</t:columns>
+							</t:Table>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</core:FragmentDefinition>

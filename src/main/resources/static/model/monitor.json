@@ -1,0 +1,80 @@
+{
+	"mapDetails":[  
+   	  {  
+         "name":"Mohan Kumar",
+         "url": "https://ldciag3.wdf.sap.corp:44354/sap/bc/ui5_ui5/sap/icmanalytics/webapp/index.html",
+         "plots":[{
+         	"title" : "Plot 1",
+         	"content" :"48%",
+         	"crop":"Maize",
+         	"lat":"30.9010",
+         	"lng":"75.8573"
+         },
+         {
+         	"title" : "Plot 2",
+         	"content" :"78%",
+         	"crop":"Carrots",
+         	"lat":"30.9007",
+         	"lng":"75.8563"
+         },
+         {
+         	"title" : "Plot 3",
+         	"content" :"26%",
+         	"crop":"Maize",
+         	"lat":"30.9012",
+         	"lng":"75.8503"
+         }]
+      },
+      {  
+         "name":"Ramdas Hans",
+         "url": "https://ldciag3.wdf.sap.corp:44354/sap/bc/ui5_ui5/sap/icmanalytics/webapp/index.html",
+         "plots":[{
+         	"title" : "Plot 1",
+         	"content" :"65%",
+         	"crop":"Potatoes",
+         	"lat":"30.8230",
+         	"lng":"75.1734"
+         },
+         {
+         	"title" : "Plot 2",
+         	"content" :"78%",
+         	"crop":"Potatoes",
+         	"lat":"30.8123",
+         	"lng":"75.1524"
+         },
+         {
+         	"title" : "Plot 3",
+         	"content" :"82%",
+         	"crop":"Peas",
+         	"lat":"30.8023",
+         	"lng":"75.1498"
+         }]
+      },
+      {  
+         "name":"Abhishek Suri",
+         "url": "https://ldciag3.wdf.sap.corp:44354/sap/bc/ui5_ui5/sap/icmanalytics/webapp/index.html",
+         "plots":[{
+         	"title" : "Plot 1",
+         	"content" :"71%",
+         	"crop":"Wheat",
+         	"lat":"31.5143",
+         	"lng":"75.9115"
+         },
+         {
+         	"title" : "Plot 2",
+         	"content" :"67%",
+         	"crop":"Wheat",
+         	"lat":"31.5089",
+         	"lng":"75.9101"
+         },
+         {
+         	"title" : "Plot 3",
+         	"content" :"45%",
+         	"crop":"Peas",
+         	"lat":"31.5103",
+         	"lng":"75.9113"
+         }]
+      }
+      
+   ]
+}

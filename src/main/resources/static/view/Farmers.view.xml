@@ -1,0 +1,85 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:mc="sap.suite.ui.microchart" xmlns="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar" controllerName="sap.innventInnvent.controller.Farmers" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<content>
+			<fb:FilterBar id="idTargetsFilterBar" reset="onFiltersReset" clear="onFiltersClear" search="searchTargets" showFilterConfiguration="false"
+				filterBarExpanded="true" showClearOnFB="false" showRestoreOnFB="true" class="filterBarClass">
+				<fb:filterItems>
+					<fb:FilterItem name="Name" label="Farmer Name">
+						<fb:control>
+							<Input id="name" value="{searchModel>/name}"/>
+						</fb:control>
+					</fb:FilterItem>
+					<fb:FilterItem name="Hierarchy" label="Crop Variety">
+						<fb:control>
+							<Select items="{searchModel>/crops}" selectedKey="{searchModel>/cropId}" change="onEnteringCropName">
+								<items>
+									<core:Item text="{searchModel>name}" key="{searchModel>id}"/>
+								</items>
+							</Select>
+						</fb:control>
+					</fb:FilterItem>
+				</fb:filterItems>
+			</fb:FilterBar>
+			<Table id="idAMTargetTable" class="tablePadding" inset="false" items="{path: 'farmerModel>/farmers'}" mode="SingleSelectLeft"
+				selectionChange="onSelectToDelete" itemPress="handleSelectionChange">
+				<headerToolbar>
+					<Toolbar>
+						<content>
+							<Title text="Farmers ({farmerModel>/farmerCount})" level="H2"/>
+							<ToolbarSpacer/>
+							<HBox>
+								<Button icon="sap-icon://add" class="sapUiTinyMarginEnd" press="onCreateNewTargets"/>
+								<Button icon="sap-icon://delete" press="onDeleteTarget" enabled="{farmerModel>/enableDelete}"/>
+							</HBox>
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Farmer Name"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true">
+						<Text text="Crop Variety"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true">
+						<Text text="Plots"/>
+					</Column>
+					<Column hAlign="End">
+						<Text text="Crop Period"/>
+					</Column>
+					<Column>
+						<Text text="Lifecycle Metrics"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true">
+						<Text text="Expected Quantity"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation">
+						<cells>
+							<Text text="{farmerModel>name}"/>
+							<Text text="{farmerModel>crop/name}"/>
+							<Text text="{farmerModel>address/addressLine1}, {farmerModel>address/city}, {farmerModel>address/state}"/>
+							<Text text="{farmerModel>cropPeriod}"/>
+							<mc:HarveyBallMicroChart items="{path: 'farmerModel>performance', templateShareable:true}" isResponsive="true" totalLabel="{farmerModel>progressPhase}" total="100" totalScale="%" showTotal="false" showFractions="true">
+								<mc:items>
+									<mc:HarveyBallMicroChartItem fraction="{farmerModel>progressPercent}" color="{farmerModel>color}" fractionScale="%" />
+								</mc:items>
+							</mc:HarveyBallMicroChart>
+							<!-- <mc:BulletMicroChart targetValue="100" thresholds="{path: 'farmerModel>bars', templateShareable:true}">
+								<mc:actual>
+									<mc:BulletMicroChartData value="{farmerModel>displayValue}" color="{farmerModel>displayColor}"/>
+								</mc:actual>
+								<mc:thresholds>
+									<mc:BulletMicroChartData value="{farmerModel>value}" color="{farmerModel>color}"/>
+								</mc:thresholds>
+							</mc:BulletMicroChart> -->
+							<Text text="{farmerModel>land/expectedQuantity}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

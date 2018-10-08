@@ -1,0 +1,32 @@
+{
+	"details":[  
+   	  {  
+         "name":"Mohan Kumar",
+         "status":"Error",
+         "indicator" : "Down",
+         "currentValue":500,
+         "expectedQuantity":1200,
+         "diffValue":700,
+         "scale":"T"
+      },
+      {  
+         "name":"Ramdas Hans",
+         "status":"Good",
+         "indicator" : "Up",
+         "currentValue":1000,
+         "expectedQuantity":1200,
+         "diffValue":200,
+         "scale":"T"
+      },
+      {  
+         "name":"Abhishek Suri",
+         "status":"Critical",
+         "indicator" : "Up",
+         "currentValue":700,
+         "expectedQuantity":1200,
+         "diffValue":500,
+         "scale":"T"
+      }
+      
+   ]
+}

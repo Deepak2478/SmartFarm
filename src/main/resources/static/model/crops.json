@@ -1,0 +1,36 @@
+{
+	"crops":[  
+   	  {  
+         "name":"Peas",
+         "type": "Rabi",
+         "status":"Warning",
+         "availablity": "Upcoming Season",
+         "season" : "October to December",
+         "icon":"images/peas.jpg"
+      },
+      {  
+         "name":"Tomato",
+         "type": "Kharif",
+         "status":"Warning",
+         "availablity": "Upcoming Season",
+         "season" : "October to December",
+         "icon":"images/tomato.jpg"
+      },
+      {  
+         "name":"Maize",
+         "type": "Kharif",
+         "season" : "June to August",
+         "status":"Error",
+         "availablity": "Out-of-Season",
+         "icon":"images/maize.jpg"
+      },
+      {  
+         "name":"Carrots",
+         "type": "Kharif",
+         "season" : "June to October",
+         "status":"Success",
+         "availablity": "On-going Season",
+         "icon":"images/carrots.jpg"
+      }
+   ]
+}

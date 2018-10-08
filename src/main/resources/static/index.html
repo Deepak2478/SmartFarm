@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>Innvent</title>
+
+		<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/1.56.4/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize_plus"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"sap.innventInnvent": ""}'>
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf4MPYdWJpwQ-NUl5cDSgUORBPkDOXm20&libraries=places"
+			type ="text/javascript"></script>
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				/* new sap.m.Shell({
+					app:  */new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "sap.innventInnvent"
+					}).placeAt("content");
+				/* }).*/
+			}); 
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>
